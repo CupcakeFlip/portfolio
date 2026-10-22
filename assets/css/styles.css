@@ -1,0 +1,125 @@
+i {
+  font-size: 32px;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.icon-btn:hover {
+  box-shadow: var(--bs-btn-shadow);
+  background-color: #d85ca3;
+  border-color: #cc559a;
+  color: #fff;
+}
+
+.icon-btn:focus {
+  --bs-btn-focus-shadow-rgb: 242, 118, 187;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+}
+
+.icon-btn {
+  -webkit-transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.icon-btn:active {
+  color: var(--bs-white);
+  background-color: #cc559a;
+  border-color: #c05092;
+  box-shadow: var(--bs-btn-shadow);
+}
+
+body {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.about-img {
+  max-width: 400px;
+  height: auto;
+  padding: 0;
+  /*aspect-ratio: 1;*/
+  float: right;
+  width: 50%;
+  /*clip-path: inset(5%);*/
+  /*shape-outside: inset(4%);*/
+  margin: 16px;
+  margin-top: 0;
+}
+
+p {
+  max-width: 80ch;
+  word-break: keep-all;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  margin: 8px;
+}
+
+.content-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-light {
+  color: var(--bs-dark);
+  border-color: var(--bs-secondary);
+  background: none;
+}
+
+.btn-light:hover {
+  color: var(--bs-dark);
+  background: var(--bs-secondary-bg-subtle);
+  border-color: var(--bs-secondary-border-subtle);
+}
+
+iframe {
+  width: 100%;
+  min-height: 450px;
+  height: 100%;
+}
+
+.selectorBtn {
+  height: 80%;
+  transition: none;
+  display: inline-block;
+  margin: 0;
+  padding: 4px;
+  color: var(--bs-dark) !important;
+  font-size: small;
+}
+
+.projectsImg {
+  height: 200px;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+a {
+  color: var(--bs-dark);
+}
