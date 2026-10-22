@@ -40,6 +40,7 @@
         document.documentElement.lang = initialLanguage;
       })();
     </script>
+    <!--suppress CssUnusedSymbol -->
     <style>
       html.lang-pending body {
         visibility: hidden;
@@ -53,7 +54,7 @@
     <title data-title-en="Portfolio" data-title-da="Portfolie">Portfolie</title>
     <script type="application/ld+json">
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Portfolie",
         "url": "https://flipdesign.dk"
@@ -101,7 +102,7 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/style.compiled.css" />
+    <link rel="stylesheet" href="assets/scss/style.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
@@ -142,7 +143,7 @@
               >
             </li>
             <li class="nav-item d-flex align-items-center">
-              <select
+              <label for="langSelector" class="visually-hidden">select language</label><select
                 id="langSelector"
                 class="btn selectorBtn"
                 style="opacity: 0.6">
@@ -243,30 +244,30 @@
         <div class="content">
           <!-- Start: tabs -->
           <div class="tabs">
-            <div class="tablinks active-tab" data-program="Figma">
-              <p class="lang lang-en" data-title="Figma">Figma</p>
-              <p class="lang lang-da" data-title="Figma">Figma</p>
-            </div>
-            <div class="tablinks" data-program="Vscode">
-              <p class="lang lang-en" data-title="Vs code">Html, Css and Js</p>
-              <p class="lang lang-da" data-title="Vs kode">Html, Css og Js</p>
-            </div>
-            <div class="tablinks" data-program="Wordpress">
-              <p class="lang lang-en" data-title="Wordpress">Wordpress</p>
-              <p class="lang lang-da" data-title="Wordpress">Wordpress</p>
-            </div>
-            <div class="tablinks" data-program="Adobe">
-              <p class="lang lang-en" data-title="Adobe">Adobe</p>
-              <p class="lang lang-da" data-title="Adobe">Adobe</p>
-            </div>
-            <div class="tablinks" data-program="Unity">
-              <p class="lang lang-en" data-title="Unity">Unity</p>
-              <p class="lang lang-da" data-title="Unity">Unity</p>
-            </div>
+            <button class="tablinks active-tab" id="tab-Figma" type="button" role="tab" aria-controls="Figma" aria-selected="true" tabindex="0" data-program="Figma">
+              <span class="lang lang-en" data-title="Figma">Figma</span>
+              <span class="lang lang-da" data-title="Figma">Figma</span>
+            </button>
+            <button class="tablinks" id="tab-Vscode" type="button" role="tab" aria-controls="Vscode" aria-selected="false" tabindex="-1" data-program="Vscode">
+              <span class="lang lang-en" data-title="Vs code">Html, Css and Js</span>
+              <span class="lang lang-da" data-title="Vs kode">Html, Css og Js</span>
+            </button>
+            <button class="tablinks" id="tab-Wordpress" type="button" role="tab" aria-controls="Wordpress" aria-selected="false" tabindex="-1" data-program="Wordpress">
+              <span class="lang lang-en" data-title="Wordpress">Wordpress</span>
+              <span class="lang lang-da" data-title="Wordpress">Wordpress</span>
+            </button>
+            <button class="tablinks" id="tab-Adobe" type="button" role="tab" aria-controls="Adobe" aria-selected="false" tabindex="-1" data-program="Adobe">
+              <span class="lang lang-en" data-title="Adobe">Adobe</span>
+              <span class="lang lang-da" data-title="Adobe">Adobe</span>
+            </button>
+            <button class="tablinks" id="tab-Unity" type="button" role="tab" aria-controls="Unity" aria-selected="false" tabindex="-1" data-program="Unity">
+              <span class="lang lang-en" data-title="Unity">Unity</span>
+              <span class="lang lang-da" data-title="Unity">Unity</span>
+            </button>
           </div>
           <!-- End: tabs -->
-          <div class="wrapper_tabcontent">
-            <div id="Figma" class="tabcontent active-tab">
+          <div class="wrapper_tabcontent" role="tabpanel" aria-labelledby="tab-Figma">
+            <div id="Figma" class="tabcontent active-tab" role="tabpanel" aria-labelledby="tab-Figma" aria-hidden="false">
               <h3>
                 <span class="lang lang-en">Figma</span
                 ><span class="lang lang-da">Figma</span>
@@ -291,7 +292,7 @@
                 </p>
               </div>
             </div>
-            <div id="Vscode" class="tabcontent">
+            <div id="Vscode" class="tabcontent" role="tabpanel" aria-labelledby="tab-Vscode" aria-hidden="true" inert>
               <h3>
                 <span class="lang lang-en">Html, Css, Js</span
                 ><span class="lang lang-da">Html, Css, Js</span>
@@ -319,7 +320,7 @@
                 </p>
               </div>
             </div>
-            <div id="Wordpress" class="tabcontent">
+            <div id="Wordpress" class="tabcontent" role="tabpanel" aria-labelledby="tab-Wordpress" aria-hidden="true" inert>
               <h3>
                 <span class="lang lang-en">Wordpress</span
                 ><span class="lang lang-da">Wordpress</span>
@@ -341,7 +342,7 @@
                 </p>
               </div>
             </div>
-            <div id="Adobe" class="tabcontent">
+            <div id="Adobe" class="tabcontent" role="tabpanel" aria-labelledby="tab-Adobe" aria-hidden="true" inert>
               <h3>
                 <span class="lang lang-en">Adobe</span
                 ><span class="lang lang-da">Adobe</span>
@@ -378,7 +379,7 @@
                 </p>
               </div>
             </div>
-            <div id="Unity" class="tabcontent">
+            <div id="Unity" class="tabcontent" role="tabpanel" aria-labelledby="tab-Unity" aria-hidden="true" inert>
               <h3>
                 <span class="lang lang-en">Unity</span
                 ><span class="lang lang-da">Unity</span>
@@ -472,7 +473,6 @@
     </footer>
     <!-- End: Footer Dark -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/language.js"></script>
     <script src="assets/js/script.js"></script>
   </body>

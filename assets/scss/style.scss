@@ -15,14 +15,13 @@ $light: #fff;
 .tab-wrapper .content {
   max-width: 800px;
   width: 100%;
-  min-width: 260px;
+  min-width: 0;
   margin: 32px;
 
   transition: 0.3s ease;
 
   @media screen and (max-width: 512px) {
-    margin: 0 4%;
-    margin-top: 5%;
+    margin: 5% 4% 0;
   }
 }
 
@@ -35,7 +34,7 @@ $light: #fff;
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  border-radius: 2px 2px 0px 0px;
+  border-radius: 2px 2px 0 0;
 
   @media screen and (max-width: 512px) {
     height: 40px;
@@ -45,14 +44,14 @@ $light: #fff;
 /* Tab Links */
 
 .tablinks {
-  background: transparent;
-  background-image: linear-gradient(
-    90deg,
-    transparent 70%,
-    rgba(255, 255, 255, 0.2) 100%
+  background: transparent linear-gradient(
+          90deg,
+          transparent 70%,
+          rgba(255, 255, 255, 0.2) 100%
   );
   border: none;
   outline: none;
+  padding: 0;
   cursor: pointer;
   width: 100%; /*change depending on the number of tabs*/
   height: 80px;
@@ -75,7 +74,7 @@ $light: #fff;
   background-image: linear-gradient(135deg, $m01 0%, $m02 100%);
   content: "";
   width: 100%;
-  height: 0px;
+  height: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -100,8 +99,8 @@ $light: #fff;
 .tablinks.active-tab {
   background-color: $light;
   z-index: 0;
-  border-right: 0px;
-  border-left: 0px;
+  border-right: 0;
+  border-left: 0;
   height: 105px;
   bottom: 10px;
   overflow: hidden;
@@ -109,6 +108,11 @@ $light: #fff;
   @media screen and (max-width: 512px) {
     height: 60px;
   }
+}
+
+.tablinks:focus-visible {
+  outline: 3px solid $text;
+  outline-offset: -4px;
 }
 
 .tablinks.active-tab:before /* Gradient */ {
@@ -162,7 +166,7 @@ $light: #fff;
   height: auto;
   width: auto;
   color: white;
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.1;
@@ -188,33 +192,57 @@ $light: #fff;
 
 .wrapper_tabcontent {
   background-color: $light;
-  margin-top: 0px;
+  margin-top: 0;
   z-index: -3;
   position: relative;
   opacity: 1;
   padding: 40px 60px;
   overflow: hidden;
-  transition: all 1s ease;
+  height: auto;
+  transition: height 0.45s ease-in-out;
   top: 0;
 }
 
-.tabcontent {
-  display: none;
-  min-height: 180px;
+.wrapper_tabcontent.is-animating {
+  overflow: hidden;
 }
 
-@keyframes tabEffect {
-  from {
-    top: -40px;
-  }
-  to {
-    top: 0px;
+.wrapper_tabcontent:not(.is-animating) {
+  overflow: visible;
+}
+
+.tabcontent {
+  display: flow-root;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 40px 60px;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.tabcontent.active-tab {
+  position: relative;
+  visibility: visible;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+@media screen and (max-width: 512px) {
+  .tabcontent {
+    padding: 40px 24px;
   }
 }
 
 .tabcontent.active-tab {
-  transition: all 1s ease;
-  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.tabcontent:not(.active-tab) h3,
+.tabcontent:not(.active-tab) p {
+  animation: none;
 }
 
 /* Tab content line */
@@ -227,7 +255,6 @@ $light: #fff;
   left: 0;
   bottom: 0;
   z-index: -2;
-  transition: all 1s ease;
 }
 
 /* Title */
@@ -238,7 +265,7 @@ $light: #fff;
   top: 90px;
   transform: rotate(90deg);
   position: absolute;
-  left: -100px;
+  left: -160px;
   opacity: 0.6;
   width: 230px;
   height: auto;
@@ -246,7 +273,7 @@ $light: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0;
-  animation: program 1s ease;
+  animation: tabTitle 0.6s ease;
   text-align: left;
 
   @media screen and (max-width: 512px) {
@@ -254,12 +281,14 @@ $light: #fff;
   }
 }
 
-@keyframes program {
+@keyframes tabTitle {
   from {
-    left: -150px;
+    opacity: 0;
+    left: -130px;
   }
   to {
-    left: -100px;
+    opacity: 0.6;
+    left: -160px;
   }
 }
 
@@ -269,7 +298,7 @@ $light: #fff;
   padding: 0;
   line-height: 28px;
   font-weight: 100;
-  transition: all 1s ease;
+  transition: none;
   animation: fadeEffect 0.6s ease;
   width: 100%;
   max-width: 60ch;
@@ -287,5 +316,25 @@ $light: #fff;
   to {
     opacity: 1;
     margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper_tabcontent {
+    transition: none;
+  }
+
+  .tabcontent.active-tab,
+  .tabcontent.active-tab h3,
+  .tabcontent.active-tab p {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .tablinks p {
+    line-height: 1.2;
+    overflow-wrap: anywhere;
   }
 }

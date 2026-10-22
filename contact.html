@@ -45,6 +45,7 @@
         visibility: hidden;
       }
 
+      /*noinspection CssUnusedSymbol*/
       html[data-lang="en"] .lang-da,
       html[data-lang="da"] .lang-en {
         display: none !important;
@@ -94,8 +95,7 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/style.compiled.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/scss/style.css" />
   </head>
 
   <body class="bg-primary-subtle">
@@ -135,7 +135,7 @@
               >
             </li>
             <li class="nav-item d-flex align-items-center">
-              <select
+              <label for="langSelector" class="visually-hidden">select language</label><select
                 id="langSelector"
                 class="btn selectorBtn"
                 style="opacity: 0.6">
@@ -261,7 +261,7 @@
                   data-bss-recipient="10a82492e39be20b8bc5329ead5bdd93">
                   <!-- Start: Success Example -->
                   <div class="mb-3">
-                    <input
+                    <label for="name-1"><span class="lang lang-en">Name</span><span class="lang lang-da">Navn</span></label><input
                       class="form-control"
                       type="text"
                       id="name-1"
@@ -274,7 +274,7 @@
                   </div>
                   <!-- End: Success Example --><!-- Start: Error Example -->
                   <div class="mb-3">
-                    <input
+                    <label for="email-1">Email</label><input
                       class="form-control"
                       type="email"
                       id="email-1"
@@ -286,7 +286,7 @@
                   </div>
                   <!-- End: Error Example -->
                   <div class="mb-3">
-                    <textarea
+                    <label for="message-1"><span class="lang lang-en">Message</span><span class="lang lang-da">Besked</span></label><textarea
                       class="form-control"
                       id="message-1"
                       name="message"
@@ -345,7 +345,6 @@
     <!-- End: Footer Dark -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/smart-forms.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/language.js"></script>
     <script src="assets/js/script.js"></script>
   </body>

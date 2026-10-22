@@ -23,13 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
 			continue;
 		}
 
+		if (!swiper.id) {
+			console.error('Swiper elements initialized by bs-init.js require an ID.');
+			continue;
+		}
+
 		if (!config.navigation) {
 			config.navigation = {};
 
 			for (let swiperNavigation of swiperNavigations) {
 				if (swiperNavigation.dataset.bssSwiperTarget === '#' + swiper.id) {
-					config.navigation.prevEl = swiperNavigation.querySelector('.swiper-button-prev');
-					config.navigation.nextEl = swiperNavigation.querySelector('.swiper-button-next');
+					let prevEl = swiperNavigation.querySelector('.swiper-button-prev');
+					let nextEl = swiperNavigation.querySelector('.swiper-button-next');
+
+					if (prevEl && nextEl) {
+						config.navigation.prevEl = prevEl;
+						config.navigation.nextEl = nextEl;
+					}
 					break;
 				}
 			}

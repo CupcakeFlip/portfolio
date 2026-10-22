@@ -48,6 +48,7 @@ function changeLanguage(languageCode) {
   document.documentElement.lang = languageCode;
   updateLocalizedAttributes(languageCode);
   document.documentElement.classList.remove("lang-pending");
+  document.dispatchEvent(new Event("languagechange"));
 }
 
 // select handler
