@@ -7,16 +7,15 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <script>
       (function () {
-        var initialLanguage = "en";
+        let initialLanguage = "en";
 
         try {
-          var preferredLanguage = localStorage.getItem("preferredLanguage");
+          let preferredLanguage = localStorage.getItem("preferredLanguage");
 
           if (preferredLanguage === "en" || preferredLanguage === "da") {
             initialLanguage = preferredLanguage;
           } else {
-            var browserLanguage = (
-              navigator.userLanguage ||
+            let browserLanguage = (
               navigator.language ||
               "en"
             ).toLowerCase();
@@ -26,8 +25,7 @@
             }
           }
         } catch (error) {
-          var fallbackBrowserLanguage = (
-            navigator.userLanguage ||
+          let fallbackBrowserLanguage = (
             navigator.language ||
             "en"
           ).toLowerCase();
@@ -173,7 +171,7 @@
               width="954"
               height="1192"
               src="assets/img/portrait-2.webp"
-              loading="auto"
+              loading="eager"
               alt="Portræt af Tiffany, ejeren af siden"
               data-alt-en="Portrait of Tiffany, the owner of the site"
               data-alt-da="Portræt af Tiffany, ejeren af siden" />

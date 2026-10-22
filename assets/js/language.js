@@ -65,7 +65,7 @@ if (selector) {
   });
 
   // detect initial browser language
-  const browserLang = navigator.userLanguage || navigator.language || "en-EN";
+  const browserLang = navigator.language || "en";
   const supportedLanguages = Array.from(selector.options).map(function (opt) {
     return opt.value;
   });

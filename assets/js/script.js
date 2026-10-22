@@ -1,15 +1,21 @@
 // tabs
 
-var tabLinks = document.querySelectorAll(".tablinks");
-var tabContent = document.querySelectorAll(".tabcontent");
+let tabLinks = document.querySelectorAll(".tablinks");
+let tabContent = document.querySelectorAll(".tabcontent");
 
 tabLinks.forEach(function (el) {
   el.addEventListener("click", openTabs);
 });
 
 function openTabs(el) {
-  var btnTarget = el.currentTarget;
-  var program = btnTarget.dataset.program;
+  let btnTarget = el.currentTarget;
+  let program = btnTarget.dataset.program;
+  let targetContent = document.getElementById(program);
+
+  if (!targetContent) {
+    console.error("Tab content not found for program:", program);
+    return;
+  }
 
   tabContent.forEach(function (el) {
     el.classList.remove("active-tab");
@@ -19,7 +25,7 @@ function openTabs(el) {
     el.classList.remove("active-tab");
   });
 
-  document.querySelector("#" + program).classList.add("active-tab");
+  targetContent.classList.add("active-tab");
 
   btnTarget.classList.add("active-tab");
 }

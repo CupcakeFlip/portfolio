@@ -10,13 +10,12 @@
         let initialLanguage = "en";
 
         try {
-          var preferredLanguage = localStorage.getItem("preferredLanguage");
+          let preferredLanguage = localStorage.getItem("preferredLanguage");
 
           if (preferredLanguage === "en" || preferredLanguage === "da") {
             initialLanguage = preferredLanguage;
           } else {
-            var browserLanguage = (
-              navigator.userLanguage ||
+            let browserLanguage = (
               navigator.language ||
               "en"
             ).toLowerCase();
@@ -26,8 +25,7 @@
             }
           }
         } catch (error) {
-          var fallbackBrowserLanguage = (
-            navigator.userLanguage ||
+          let fallbackBrowserLanguage = (
             navigator.language ||
             "en"
           ).toLowerCase();

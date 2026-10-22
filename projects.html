@@ -7,16 +7,15 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <script>
       (function () {
-        var initialLanguage = "en";
+        let initialLanguage = "en";
 
         try {
-          var preferredLanguage = localStorage.getItem("preferredLanguage");
+          let preferredLanguage = localStorage.getItem("preferredLanguage");
 
           if (preferredLanguage === "en" || preferredLanguage === "da") {
             initialLanguage = preferredLanguage;
           } else {
-            var browserLanguage = (
-              navigator.userLanguage ||
+            let browserLanguage = (
               navigator.language ||
               "en"
             ).toLowerCase();
@@ -26,8 +25,7 @@
             }
           }
         } catch (error) {
-          var fallbackBrowserLanguage = (
-            navigator.userLanguage ||
+          let fallbackBrowserLanguage = (
             navigator.language ||
             "en"
           ).toLowerCase();
@@ -187,7 +185,7 @@
                   <img
                     class="object-fit-cover rounded d-block projectsImg"
                     src="assets/img/Skærmbillede%202026-03-08%20172228.webp"
-                    loading="auto"
+                    loading="lazy"
                     alt="Forhåndsvisning af Hesselgaards glamping-website"
                     data-alt-en="Preview of the Hesselgaard glamping website"
                     data-alt-da="Forhåndsvisning af Hesselgaards glamping-website" />
@@ -475,7 +473,7 @@
                         alt="Project image of the Rubik's Cube solver"
                         data-alt-en="Project image of the Rubik's Cube solver"
                         data-alt-da="Projektbillede af Rubik's Cube-solveren"
-                        loading="auto" />
+                        loading="lazy" />
                     </div>
                     <div class="swiper-slide">
                       <img
