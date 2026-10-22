@@ -1,0 +1,547 @@
+<!doctype html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <script>
+      (function () {
+        var initialLanguage = "en";
+
+        try {
+          var preferredLanguage = localStorage.getItem("preferredLanguage");
+
+          if (preferredLanguage === "en" || preferredLanguage === "da") {
+            initialLanguage = preferredLanguage;
+          } else {
+            var browserLanguage = (
+              navigator.userLanguage ||
+              navigator.language ||
+              "en"
+            ).toLowerCase();
+
+            if (browserLanguage.indexOf("da") !== -1) {
+              initialLanguage = "da";
+            }
+          }
+        } catch (error) {
+          var fallbackBrowserLanguage = (
+            navigator.userLanguage ||
+            navigator.language ||
+            "en"
+          ).toLowerCase();
+
+          if (fallbackBrowserLanguage.indexOf("da") !== -1) {
+            initialLanguage = "da";
+          }
+        }
+
+        document.documentElement.classList.add("lang-pending");
+        document.documentElement.setAttribute("data-lang", initialLanguage);
+        document.documentElement.lang = initialLanguage;
+      })();
+    </script>
+    <style>
+      html.lang-pending body {
+        visibility: hidden;
+      }
+
+      html[data-lang="en"] .lang-da,
+      html[data-lang="da"] .lang-en {
+        display: none !important;
+      }
+    </style>
+    <title data-title-en="Portfolio" data-title-da="Portfolie">Portfolie</title>
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/img/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/img/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&amp;family=Radio+Canada:ital,wght@0,300..700;1,300..700&amp;display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Radio+Canada&amp;display=swap" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/css/bss-overrides.css" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Basic-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.compiled.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Start: Navbar Right Links -->
+    <nav class="navbar navbar-expand-md bg-body-secondary fs-5 shadow py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html"
+          ><span>FlipDesign</span></a
+        ><button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navcol-2">
+          <span class="visually-hidden"
+            ><span class="lang lang-en">Toggle navigation</span
+            ><span class="lang lang-da">Skift navigation</span></span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"></li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><span class="lang lang-en">About me</span
+                ><span class="lang lang-da">Om mig</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="projects.html"
+                ><span class="lang lang-en">Projects</span
+                ><span class="lang lang-da">Projekter</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"
+                ><span class="lang lang-en">Contact</span
+                ><span class="lang lang-da">Kontakt</span></a
+              >
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <select
+                id="langSelector"
+                class="btn selectorBtn"
+                style="opacity: 0.6">
+                <option value="en">English</option>
+                <option value="da">Dansk</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End: Navbar Right Links -->
+    <main>
+      <section>
+        <!-- Start: Projects Grid -->
+        <div class="container py-4 py-xl-5">
+          <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+              <h1>
+                <span class="lang lang-en">Projects</span
+                ><span class="lang lang-da">Projekter</span>
+              </h1>
+              <p>
+                <span class="lang lang-en"
+                  >Here you can explore a selection of my past projects to get a
+                  better<br />
+                  sense of my skills, interests, and what I am capable of
+                  creating.</span
+                ><span class="lang lang-da"
+                  >Her kan du udforske et udvalg af mine tidligere projekter og
+                  få et bedre<br />
+                  indtryk af mine færdigheder, interesser og hvad jeg kan
+                  skabe.</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div class="col">
+              <div>
+                <button
+                  class="btn w-100 p-0"
+                  type="button"
+                  data-bs-target="#modal-2"
+                  data-bs-toggle="modal">
+                  <img
+                    class="object-fit-cover rounded d-block projectsImg"
+                    src="assets/img/Skærmbillede%202026-03-08%20172228.webp"
+                    loading="auto"
+                    alt="Forhåndsvisning af Hesselgaards glamping-website"
+                    data-alt-en="Preview of the Hesselgaard glamping website"
+                    data-alt-da="Forhåndsvisning af Hesselgaards glamping-website" />
+                </button>
+                <div>
+                  <h3>
+                    <span class="lang lang-en">Glamping site</span
+                    ><span class="lang lang-da">Glamping-site</span>
+                  </h3>
+                  <p class="lang lang-en" style="margin: 0">
+                    This website was created as part of a group project where we
+                    designed a new digital presence for Hesselgaard, a small
+                    glamping destination on Funen. The goal was to create a
+                    website that clearly presents their glamping stays and
+                    events while giving visitors a sense of the calm,
+                    nature-focused atmosphere of the location.<br />The site was
+                    designed with a mobile-first approach and focuses on clear
+                    navigation, a calm visual style, and easy access to
+                    important information such as activities, facilities, and
+                    booking. The aim was to create a user-friendly experience
+                    that helps potential visitors explore the destination and
+                    understand what the stay offers.<br /><br /><strong
+                      >Click the image to view the site.</strong
+                    >
+                  </p>
+                  <p class="lang lang-da" style="margin: 0">
+                    Dette website blev lavet som en del af et gruppeprojekt,
+                    hvor vi designede en ny digital tilstedeværelse for
+                    Hesselgaard, en lille glamping-destination på Fyn. Målet var
+                    at skabe et website, der tydeligt præsenterer deres
+                    glampingophold og events, samtidig med at besøgende får en
+                    fornemmelse af stedets rolige og naturfokuserede
+                    atmosfære.<br />Sitet blev designet med en mobile-first
+                    tilgang og fokuserer på tydelig navigation, et roligt
+                    visuelt udtryk og nem adgang til vigtig information som
+                    aktiviteter, faciliteter og booking. Formålet var at skabe
+                    en brugervenlig oplevelse, der hjælper potentielle gæster
+                    med at udforske destinationen og forstå, hvad opholdet
+                    tilbyder.<br /><br /><strong
+                      >Klik på billedet for at se siden.</strong
+                    >
+                  </p>
+                  <a
+                    class="project-link"
+                    href="https://github.com/UCL-Projekt-5/Projekt-5"
+                    ><span class="lang lang-en">See the project on Github</span
+                    ><span class="lang lang-da">Se projektet på Github</span
+                    ><i
+                      class="icon ion-social-github"
+                      style="text-align: right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div>
+                <button
+                  class="btn w-100 p-0"
+                  type="button"
+                  data-bs-target="#modal-1"
+                  data-bs-toggle="modal">
+                  <img
+                    class="img-fluid object-fit-cover rounded d-block projectsImg"
+                    src="assets/img/sunMood.png"
+                    alt="Preview of SunMood weather and mood tracker"
+                    data-alt-en="Preview of SunMood weather and mood tracker"
+                    data-alt-da="Forhåndsvisning af SunMood vejr- og humørtracker" />
+                </button>
+                <div>
+                  <h3>
+                    <span class="lang lang-en"
+                      >SunMood - Weather &amp; Mood Tracker</span
+                    ><span class="lang lang-da"
+                      >SunMood - Vejr- og humørtracker</span
+                    >
+                  </h3>
+                  <p class="lang lang-en" style="margin: 0">
+                    This website was created in 2023 as part of a project that
+                    required API integration. Using a weather API, I built a
+                    page that displays the current weather and compares today's
+                    sunshine hours with yesterday's. The idea behind SunMood was
+                    to help people affected by seasonal depression track their
+                    mood alongside sunlight exposure. The plan was to allow
+                    users to log their mood, enabling them to see trends over
+                    time based on sun levels.<br /><br /><strong
+                      >Click the image to view a Figma prototype.</strong
+                    >
+                  </p>
+                  <p class="lang lang-da" style="margin: 0">
+                    Dette website blev lavet i 2023 som en del af et projekt,
+                    der krævede API-integration. Ved hjælp af et vejr-API
+                    byggede jeg en side, der viser det aktuelle vejr og
+                    sammenligner dagens solskinstimer med gårsdagens. Ideen bag
+                    SunMood var at hjælpe mennesker med sæsonbetinget depression
+                    med at tracke deres humør sammen med soleksponering. Planen
+                    var at lade brugere logge deres humør, så de kunne se
+                    udviklingen over tid i forhold til solniveauer.<br /><br /><strong
+                      >Klik på billedet for at se en Figma-prototype.</strong
+                    >
+                  </p>
+                  <a
+                    class="project-link"
+                    href="https://github.com/3r-ddusoftware-EksamensProjekt/SunMood"
+                    ><span class="lang lang-en">See the project on Github</span
+                    ><span class="lang lang-da">Se projektet på Github</span
+                    ><i
+                      class="icon ion-social-github"
+                      style="text-align: right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div>
+                <button
+                  class="btn w-100 p-0"
+                  type="button"
+                  data-bs-target="#modal-3"
+                  data-bs-toggle="modal">
+                  <img
+                    class="img-fluid object-fit-cover rounded d-block projectsImg"
+                    src="assets/img/rubiks1.webp"
+                    alt="Preview of the image-based Rubik's Cube solver"
+                    data-alt-en="Preview of the image-based Rubik's Cube solver"
+                    data-alt-da="Forhåndsvisning af den billedbaserede Rubik's Cube-solver" />
+                </button>
+                <div>
+                  <h3>
+                    <span class="lang lang-en"
+                      >Rubik's Cube Solver (Image-Based)</span
+                    ><span class="lang lang-da"
+                      >Rubik's Cube Solver (Billedbaseret)</span
+                    >
+                  </h3>
+                  <p class="lang lang-en" style="margin: 0">
+                    This project was created as an experiment in working with
+                    basic LLM training and API integration. The goal was to
+                    explore how a trained model could be used to recognize the
+                    colors of a Rubik's Cube and convert them into a solvable
+                    cube state.<br />Using a color recognition system, the
+                    application can take photos of each side of a Rubik's Cube
+                    and detect the colors of the individual squares. Once all
+                    sides have been captured, the cube state is sent to a
+                    Rubik's Cube solving API, which returns the sequence of
+                    moves needed to solve the cube.<br /><br /><strong
+                      >Click the image to view different images of the
+                      project.</strong
+                    >
+                  </p>
+                  <p class="lang lang-da" style="margin: 0">
+                    Dette projekt blev lavet som et eksperiment i at arbejde med
+                    grundlæggende LLM-træning og API-integration. Målet var at
+                    undersøge, hvordan en trænet model kunne bruges til at
+                    genkende farverne på en Rubik's Cube og omsætte dem til en
+                    løsbar kubetilstand.<br />Ved hjælp af et
+                    farvegenkendelsessystem kan applikationen tage billeder af
+                    hver side af en Rubik's Cube og identificere farverne på de
+                    enkelte felter. Når alle sider er fanget, sendes
+                    kubetilstanden til et Rubik's Cube-løsnings-API, som
+                    returnerer den flyttesekvens, der løser kuben.<br /><br /><strong
+                      >Klik på billedet for at se flere billeder af
+                      projektet.</strong
+                    >
+                  </p>
+                  <a
+                    class="project-link"
+                    href="https://github.com/CupcakeFlip/Projekt-2-Intelligent-styring"
+                    ><span class="lang lang-en">See the project on Github</span
+                    ><span class="lang lang-da">Se projektet på Github</span
+                    ><i
+                      class="icon ion-social-github"
+                      style="text-align: right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End: Projects Grid -->
+      </section>
+      <section>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered"
+            role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  <span class="lang lang-en"
+                    >SunMood - Weather &amp; Mood Tracker</span
+                  ><span class="lang lang-da"
+                    >SunMood - Vejr- og humørtracker</span
+                  >
+                </h4>
+                <button
+                  class="btn-close"
+                  type="button"
+                  aria-label="Close"
+                  data-aria-label-en="Close"
+                  data-aria-label-da="Luk"
+                  data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body" style="width: 100%">
+                <iframe
+                  style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                  width="800"
+                  height="450"
+                  src="https://embed.figma.com/proto/Wc3gsJiNxgpna3FpxGiN78/Wireframing-in-Figma--Copy---Copy-?content-scaling=fixed&kind=proto&node-id=413-744&page-id=318%3A731&scaling=scale-down-width&starting-point-node-id=413%3A744&embed-host=share"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          role="dialog"
+          tabindex="-1"
+          data-bs-backdrop="static"
+          id="modal-2">
+          <div class="modal-dialog modal-fullscreen" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  <span class="lang lang-en">Glamping site</span
+                  ><span class="lang lang-da">Glamping-site</span>
+                </h4>
+                <button
+                  class="btn-close"
+                  type="button"
+                  aria-label="Close"
+                  data-aria-label-en="Close"
+                  data-aria-label-da="Luk"
+                  data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body" style="width: 100%">
+                <iframe
+                  style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                  width="800"
+                  height="450"
+                  src="https://projekt5.flipdesign.dk"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal-3">
+          <div
+            class="modal-dialog modal-lg modal-dialog-centered"
+            role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  <span
+                    class="lang lang-en"
+                    style="background-color: rgb(253, 228, 243)"
+                    >Rubik's Cube Solver (Image-Based)</span
+                  ><span
+                    class="lang lang-da"
+                    style="background-color: rgb(253, 228, 243)"
+                    >Rubik's Cube Solver (Billedbaseret)</span
+                  >
+                </h4>
+                <button
+                  class="btn-close"
+                  type="button"
+                  aria-label="Close"
+                  data-aria-label-en="Close"
+                  data-aria-label-da="Luk"
+                  data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body" style="width: 100%">
+                <div
+                  class="swiper"
+                  id="swiper-1"
+                  data-bss-swiper='{"direction":"horizontal","loop":true,"keyboard":true,"mousewheel":true,"effect":"slide","pagination":{"el":".swiper-pagination","type":"bullets","clickable":true},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"}}'>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        class="img-fluid w-100"
+                        width="2159"
+                        height="1088"
+                        src="assets/img/rubiks1.webp"
+                        alt="Project image of the Rubik's Cube solver"
+                        data-alt-en="Project image of the Rubik's Cube solver"
+                        data-alt-da="Projektbillede af Rubik's Cube-solveren"
+                        loading="auto" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        class="img-fluid w-100"
+                        width="2879"
+                        height="1464"
+                        src="assets/img/rubiks2.png"
+                        alt="Project image of the Rubik's Cube solver"
+                        data-alt-en="Project image of the Rubik's Cube solver"
+                        data-alt-da="Projektbillede af Rubik's Cube-solveren" />
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="swiper-button-prev"
+                      style="color: var(--bs-primary)"></div>
+                    <div
+                      class="swiper-button-next"
+                      style="color: var(--bs-primary)"></div>
+                  </div>
+                  <div
+                    class="swiper-pagination"
+                    style="color: var(--bs-primary)"></div>
+                </div>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Start: Footer Dark -->
+    <footer class="text-center bg-body" data-bs-theme="dark">
+      <div class="container py-4 py-lg-5">
+        <ul class="list-inline">
+          <li class="list-inline-item me-4"></li>
+          <li class="list-inline-item me-4">
+            <a class="link-body-emphasis" href="index.html"
+              ><span class="lang lang-en">About me</span
+              ><span class="lang lang-da">Om mig</span></a
+            >
+          </li>
+          <li class="list-inline-item me-4">
+            <a class="link-body-emphasis" href="projects.html"
+              ><span class="lang lang-en">Projects</span
+              ><span class="lang lang-da">Projekter</span></a
+            >
+          </li>
+          <li class="list-inline-item">
+            <a class="link-body-emphasis" href="contact.html"
+              ><span class="lang lang-en">Contact</span
+              ><span class="lang lang-da">Kontakt</span></a
+            >
+          </li>
+          <li class="list-inline-item"></li>
+        </ul>
+        <p class="text-body mb-0" style="max-width: 100%">
+          <span>Copyright © 2026 FlipDesign</span>
+        </p>
+      </div>
+    </footer>
+    <!-- End: Footer Dark -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

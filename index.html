@@ -1,0 +1,481 @@
+<!doctype html>
+<html class="vh-100" data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <script>
+      (function () {
+        var initialLanguage = "en";
+
+        try {
+          var preferredLanguage = localStorage.getItem("preferredLanguage");
+
+          if (preferredLanguage === "en" || preferredLanguage === "da") {
+            initialLanguage = preferredLanguage;
+          } else {
+            var browserLanguage = (
+              navigator.userLanguage ||
+              navigator.language ||
+              "en"
+            ).toLowerCase();
+
+            if (browserLanguage.indexOf("da") !== -1) {
+              initialLanguage = "da";
+            }
+          }
+        } catch (error) {
+          var fallbackBrowserLanguage = (
+            navigator.userLanguage ||
+            navigator.language ||
+            "en"
+          ).toLowerCase();
+
+          if (fallbackBrowserLanguage.indexOf("da") !== -1) {
+            initialLanguage = "da";
+          }
+        }
+
+        document.documentElement.classList.add("lang-pending");
+        document.documentElement.setAttribute("data-lang", initialLanguage);
+        document.documentElement.lang = initialLanguage;
+      })();
+    </script>
+    <style>
+      html.lang-pending body {
+        visibility: hidden;
+      }
+
+      html[data-lang="en"] .lang-da,
+      html[data-lang="da"] .lang-en {
+        display: none !important;
+      }
+    </style>
+    <title data-title-en="Portfolio" data-title-da="Portfolie">Portfolie</title>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Portfolie",
+        "url": "https://flipdesign.dk"
+      }
+    </script>
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/img/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/img/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&amp;family=Radio+Canada:ital,wght@0,300..700;1,300..700&amp;display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Radio+Canada&amp;display=swap" />
+    <link rel="stylesheet" href="assets/css/bss-overrides.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Basic-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.compiled.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body class="vh-100">
+    <!-- Start: Navbar Right Links -->
+    <nav class="navbar navbar-expand-md bg-body-secondary fs-5 shadow py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html"
+          ><span>FlipDesign</span></a
+        ><button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navcol-2">
+          <span class="visually-hidden"
+            ><span class="lang lang-en">Toggle navigation</span
+            ><span class="lang lang-da">Skift navigation</span></span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html"
+                ><span class="lang lang-en">About me</span
+                ><span class="lang lang-da">Om mig</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html"
+                ><span class="lang lang-en">Projects</span
+                ><span class="lang lang-da">Projekter</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"
+                ><span class="lang lang-en">Contact</span
+                ><span class="lang lang-da">Kontakt</span></a
+              >
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <select
+                id="langSelector"
+                class="btn selectorBtn"
+                style="opacity: 0.6">
+                <option value="en">English</option>
+                <option value="da">Dansk</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End: Navbar Right Links -->
+    <main>
+      <!-- Start: 2 Rows 1+1 Columns -->
+      <div class="container py-4 py-xl-5">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>
+              <span class="lang lang-en">About me</span
+              ><span class="lang lang-da">Om mig</span>
+            </h1>
+          </div>
+          <div class="col">
+            <img
+              class="object-fit-cover border rounded-4 border-primary shadow img about-img"
+              width="954"
+              height="1192"
+              src="assets/img/portrait-2.webp"
+              loading="auto"
+              alt="Portræt af Tiffany, ejeren af siden"
+              data-alt-en="Portrait of Tiffany, the owner of the site"
+              data-alt-da="Portræt af Tiffany, ejeren af siden" />
+            <div style="margin: 0 10%; width: fit-content">
+              <p class="lang lang-en">
+                Hi I'm Tiffany Schilling, a 22-year-old multimedia design
+                student at UCL in Odense. I'm passionate about web design and
+                frontend development, and I enjoy turning creative ideas into
+                functional, user-friendly websites. I currently live with my
+                nearly 3-year-old cat, Zammy.
+              </p>
+              <p class="lang lang-da">
+                Hej, jeg hedder Tiffany Schilling, en 22-årig
+                multimediedesignstuderende på UCL i Odense. Jeg brænder for
+                webdesign og frontend-udvikling, og jeg elsker at omsætte
+                kreative ideer til funktionelle og brugervenlige websites. Jeg
+                bor lige nu sammen med min snart 3-årige kat, Zammy.
+              </p>
+              <p class="my-3 lang lang-en">
+                I've always had a creative mindset and a strong interest in
+                technology. Learning how different tools and programs work has
+                always come naturally to me, which sparked my desire to build a
+                career in the digital world.<br />During high school (HTX), I
+                was introduced to programming with Python and C++, as well as
+                web design using HTML, CSS, and JavaScript. I quickly fell in
+                love with frontend development, especially the visual and
+                interactive aspects of creating websites.<br />After graduating,
+                I began studying Game Development and Learning Technology at
+                SDU. Here, I worked with C# in Unity, Java, MongoDB, and R, and
+                I gained a solid understanding of design theory, particularly in
+                the context of game development. While it was a valuable
+                experience, I realized that my true passion lies in web design,
+                so I chose to change direction.<br />I'm now studying Multimedia
+                Design at UCL, where I can focus more deeply on what I enjoy
+                most: designing and building websites. I love working with
+                frontend code to bring hi-fi prototypes and mockups to life,
+                whether it's through experimenting with color schemes,
+                implementing responsive designs, or solving design problems with
+                creative code solutions.
+              </p>
+              <p class="my-3 lang lang-da">
+                Jeg har altid haft et kreativt mindset og en stor interesse for
+                teknologi. At lære, hvordan forskellige værktøjer og programmer
+                fungerer, er altid faldet mig naturligt, og det vakte mit ønske
+                om at skabe en karriere i den digitale verden.<br />På HTX blev
+                jeg introduceret til programmering med Python og C++ samt
+                webdesign med HTML, CSS og JavaScript. Jeg blev hurtigt vild med
+                frontend-udvikling, især de visuelle og interaktive sider af at
+                bygge websites.<br />Efter gymnasiet begyndte jeg på Game
+                Development and Learning Technology på SDU. Her arbejdede jeg
+                med C# i Unity, Java, MongoDB og R, og jeg fik en solid
+                forståelse for designteori, særligt i spiludviklingskontekst.
+                Det var en værdifuld erfaring, men jeg fandt ud af, at min
+                største passion ligger i webdesign, så jeg valgte at skifte
+                retning.<br />Nu læser jeg Multimediedesign på UCL, hvor jeg kan
+                fordybe mig i det, jeg holder allermest af: at designe og
+                udvikle websites. Jeg elsker at arbejde med frontend-kode for at
+                føre hi-fi prototyper og mockups ud i livet, hvad enten det er
+                gennem farveeksperimenter, responsivt design eller kreative
+                kodeløsninger på designudfordringer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: 2 Rows 1+1 Columns --><!-- Start: programs -->
+      <section class="tab-wrapper">
+        <!-- Start: content -->
+        <div class="content">
+          <!-- Start: tabs -->
+          <div class="tabs">
+            <div class="tablinks active-tab" data-program="Figma">
+              <p class="lang lang-en" data-title="Figma">Figma</p>
+              <p class="lang lang-da" data-title="Figma">Figma</p>
+            </div>
+            <div class="tablinks" data-program="Vscode">
+              <p class="lang lang-en" data-title="Vs code">Html, Css and Js</p>
+              <p class="lang lang-da" data-title="Vs kode">Html, Css og Js</p>
+            </div>
+            <div class="tablinks" data-program="Wordpress">
+              <p class="lang lang-en" data-title="Wordpress">Wordpress</p>
+              <p class="lang lang-da" data-title="Wordpress">Wordpress</p>
+            </div>
+            <div class="tablinks" data-program="Adobe">
+              <p class="lang lang-en" data-title="Adobe">Adobe</p>
+              <p class="lang lang-da" data-title="Adobe">Adobe</p>
+            </div>
+            <div class="tablinks" data-program="Unity">
+              <p class="lang lang-en" data-title="Unity">Unity</p>
+              <p class="lang lang-da" data-title="Unity">Unity</p>
+            </div>
+          </div>
+          <!-- End: tabs -->
+          <div class="wrapper_tabcontent">
+            <div id="Figma" class="tabcontent active-tab">
+              <h3>
+                <span class="lang lang-en">Figma</span
+                ><span class="lang lang-da">Figma</span>
+              </h3>
+              <div class="content-p">
+                <p class="lang lang-en">
+                  I started using Figma during high school to visually
+                  communicate my ideas and design concepts. It quickly became my
+                  go-to tool for wireframing and prototyping, helping me bring
+                  product visions to life more clearly and efficiently. I also
+                  love to explore and use all of Figma's features to make every
+                  project more efficient and responsive.
+                </p>
+                <p class="lang lang-da">
+                  Jeg begyndte at bruge Figma i gymnasiet for visuelt at
+                  formidle mine ideer og designkoncepter. Det blev hurtigt mit
+                  foretrukne værktøj til wireframing og prototyper, fordi det
+                  hjælper mig med at gøre produktvisioner mere tydelige og
+                  effektive. Jeg elsker også at udforske og bruge alle Figmas
+                  funktioner, så hvert projekt bliver mere effektivt og
+                  responsivt.
+                </p>
+              </div>
+            </div>
+            <div id="Vscode" class="tabcontent">
+              <h3>
+                <span class="lang lang-en">Html, Css, Js</span
+                ><span class="lang lang-da">Html, Css, Js</span>
+              </h3>
+              <div class="content-p">
+                <p class="lang lang-en">
+                  My first experience with HTML, CSS, and JavaScript was through
+                  an online course by SheCodes in 2020. I later deepened my
+                  skills in high school, where I built a website as part of an
+                  exam project, integrating an API to create dynamic content. In
+                  this project I also used npm with ejs. Since then, I have
+                  continued developing my frontend skills through both education
+                  and personal projects.<br />This semester I am going to learn
+                  more about frameworks, specifically Vue.
+                </p>
+                <p class="lang lang-da">
+                  Min første erfaring med HTML, CSS og JavaScript fik jeg gennem
+                  et onlinekursus hos SheCodes i 2020. Senere styrkede jeg mine
+                  færdigheder i gymnasiet, hvor jeg byggede et website som en
+                  del af et eksamensprojekt og integrerede et API for at skabe
+                  dynamisk indhold. I det projekt brugte jeg også npm med ejs.
+                  Siden da har jeg fortsat udviklet mine frontend-færdigheder
+                  gennem både uddannelse og personlige projekter. I dette
+                  semester skal jeg lære mere om frameworks, primært Vue.
+                </p>
+              </div>
+            </div>
+            <div id="Wordpress" class="tabcontent">
+              <h3>
+                <span class="lang lang-en">Wordpress</span
+                ><span class="lang lang-da">Wordpress</span>
+              </h3>
+              <div class="content-p">
+                <p class="lang lang-en">
+                  Throughout my multimedia design studies, I have worked
+                  extensively with WordPress. I find it intuitive to use, and I
+                  am confident in customizing layouts and themes to match
+                  specific design goals. Through this, I have also learned how
+                  to create a new theme with PHP.
+                </p>
+                <p class="lang lang-da">
+                  Gennem min uddannelse i multimediedesign har jeg arbejdet
+                  meget med WordPress. Jeg synes, det er intuitivt at bruge, og
+                  jeg er tryg ved at tilpasse layouts og temaer, så de matcher
+                  konkrete designmål. Derigennem har jeg også lært at udvikle et
+                  nyt tema med PHP.
+                </p>
+              </div>
+            </div>
+            <div id="Adobe" class="tabcontent">
+              <h3>
+                <span class="lang lang-en">Adobe</span
+                ><span class="lang lang-da">Adobe</span>
+              </h3>
+              <div class="content-p">
+                <p class="lang lang-en">
+                  Throughout my multimedia design studies, I have worked with
+                  many Adobe programs, but I have mostly used Illustrator and
+                  InDesign.<br />In Illustrator, I primarily work with SVG
+                  files, modifying colors and adapting visuals for various uses.
+                  I have also created original vector graphics for academic
+                  reports and multimedia projects, contributing to both visual
+                  identity and content clarity.<br />I have regularly used
+                  InDesign for academic reports and printed materials. I am
+                  responsible for both the visual layout and technical setup,
+                  including page numbering, tables of contents, and consistent
+                  typography through custom font libraries. I love learning how
+                  to optimize the program as much as possible.
+                </p>
+                <p class="lang lang-da">
+                  Gennem min uddannelse i multimediedesign har jeg arbejdet med
+                  mange af Adobes programmer, men jeg har især brugt Illustrator
+                  og InDesign.<br />I Illustrator arbejder jeg primært med
+                  SVG-filer, hvor jeg justerer farver og tilpasser visuals til
+                  forskellige formål. Jeg har også lavet originale
+                  vektorgrafikker til akademiske rapporter og
+                  multimedieprojekter, som har bidraget til både visuel
+                  identitet og tydelig formidling.<br />Jeg bruger InDesign
+                  regelmæssigt til akademiske rapporter og trykte materialer.
+                  Her står jeg for både det visuelle layout og den tekniske
+                  opsætning, herunder sidetal, indholdsfortegnelser og
+                  konsistent typografi via egne fontbiblioteker. Jeg elsker at
+                  lære, hvordan jeg kan optimere programmet mest muligt.
+                </p>
+              </div>
+            </div>
+            <div id="Unity" class="tabcontent">
+              <h3>
+                <span class="lang lang-en">Unity</span
+                ><span class="lang lang-da">Unity</span>
+              </h3>
+              <div class="content-p">
+                <p class="lang lang-en">
+                  I started working with Unity during my studies at SDU, where I
+                  developed two vertical slice games. These projects focused
+                  primarily on implementing core mechanics and gameplay
+                  features, rather than building full, polished games. I also
+                  created several smaller prototypes to explore different ideas
+                  and interaction models. Through this, I gained hands-on
+                  experience with C# scripting and designing interactive
+                  functionality within a game engine environment.
+                </p>
+                <p class="lang lang-da">
+                  Jeg begyndte at arbejde med Unity under mine studier på SDU,
+                  hvor jeg udviklede to vertical slice-spil. Projekterne
+                  fokuserede primært på at implementere kernemekanikker og
+                  gameplay-funktioner frem for at bygge fulde, færdigpolerede
+                  spil. Jeg lavede også flere mindre prototyper for at afprøve
+                  forskellige ideer og interaktionsmodeller. Gennem det fik jeg
+                  praktisk erfaring med C#-scripting og design af interaktiv
+                  funktionalitet i et game engine-miljø.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End: content -->
+      </section>
+      <!-- End: programs --><!-- Start: Banner Clean -->
+      <section>
+        <div class="container">
+          <div class="text-center p-4 pb-7">
+            <h2 class="fw-bold mb-4">
+              <span class="lang lang-en"
+                >See some of the projects I have made, or contact me</span
+              ><span class="lang lang-da"
+                >Se nogle af de projekter, jeg har lavet, eller kontakt
+                mig</span
+              >
+            </h2>
+            <a
+              class="btn btn-primary fs-5 me-2 px-4 py-2"
+              role="button"
+              href="projects.html"
+              ><span class="lang lang-en">See Projects</span
+              ><span class="lang lang-da">Se projekter</span></a
+            ><a
+              class="btn btn-light fs-5 px-4 py-2"
+              role="button"
+              href="contact.html"
+              ><span class="lang lang-en">Contact</span
+              ><span class="lang lang-da">Kontakt</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- End: Banner Clean -->
+    </main>
+    <!-- Start: Footer Dark -->
+    <footer class="text-center bg-body" data-bs-theme="dark">
+      <div class="container py-4 py-lg-5">
+        <ul class="list-inline">
+          <li class="list-inline-item me-4"></li>
+          <li class="list-inline-item me-4">
+            <a class="link-body-emphasis" href="index.html"
+              ><span class="lang lang-en">About me</span
+              ><span class="lang lang-da">Om mig</span></a
+            >
+          </li>
+          <li class="list-inline-item me-4">
+            <a class="link-body-emphasis" href="projects.html"
+              ><span class="lang lang-en">Projects</span
+              ><span class="lang lang-da">Projekter</span></a
+            >
+          </li>
+          <li class="list-inline-item">
+            <a class="link-body-emphasis" href="contact.html"
+              ><span class="lang lang-en">Contact</span
+              ><span class="lang lang-da">Kontakt</span></a
+            >
+          </li>
+          <li class="list-inline-item"></li>
+        </ul>
+        <p class="text-body mb-0" style="max-width: 100%">
+          <span>Copyright © 2026 FlipDesign</span>
+        </p>
+      </div>
+    </footer>
+    <!-- End: Footer Dark -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
